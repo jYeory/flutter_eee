@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:table_calendar/table_calendar.dart';
+import 'package:intl/date_symbol_data_local.dart';
 
 void main() {
   runApp(MyApp());
@@ -32,6 +34,22 @@ class MyApp extends StatelessWidget {
                     width: 81,
                   ),
                 ),
+                TableCalendar(
+                  firstDay: DateTime.utc(2010, 10, 16),
+                  lastDay: DateTime.utc(2024, 12, 31),
+                  focusedDay: DateTime.now(),
+                  calendarStyle: CalendarStyle(
+                    outsideDaysVisible: true,
+                  ),
+                  //locale: 'ko_KR',
+                  headerStyle: HeaderStyle(
+                      formatButtonVisible: false,
+                      titleCentered: true,
+                      leftChevronVisible: false,
+                      rightChevronVisible: false,
+                      headerPadding: EdgeInsets.all(15)),
+                )
+                /*
                 TextField(
                   decoration: InputDecoration(labelText: '이메일'),
                 ),
@@ -47,6 +65,7 @@ class MyApp extends StatelessWidget {
                     child: Text('LOGIN'),
                   ),
                 )
+                */
               ],
             ),
           ),
